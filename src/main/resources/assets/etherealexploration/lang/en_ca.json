@@ -1,0 +1,12 @@
+{
+  "entity.etherealexploration.outburst": "Outburst",
+  "entity.etherealexploration.fume": "Fume",
+  "entity.etherealexploration.fume_gas": "Clump of Toxic Gas",
+
+  "death.attack.etherealexploration.projectile.fume_gas": "%s was inflicted by toxic fumes",
+  "death.attack.etherealexploration.projectile.fume_gas.player": "%s was inflicted by toxic fumes produced by %2$s",
+
+  "block.etherealexploration.hardened_sludge": "Block of Hardened Sludge",
+  "block.etherealexploration.industrial_iron_block": "Block of Industrial Iron",
+  "block.etherealexploration.bleak_stone": "Bleak Stone"
+}
