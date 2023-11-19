@@ -1,0 +1,14 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": [
+    "etherealexploration:wastes",
+    "etherealexploration:rocky_wastes",
+    "etherealexploration:bountiful_rocky_wastes"
+  ],
+  "spawners": {
+    "type": "etherealexploration:dephelingus",
+    "weight": 15,
+    "minCount": 1,
+    "maxCount": 4
+  }
+}

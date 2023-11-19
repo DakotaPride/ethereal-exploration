@@ -6,8 +6,10 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.damagesource.DamageType;
 
+@SuppressWarnings("unused")
 public class EEDamageSources {
     public static final ResourceKey<DamageType> FUME_GAS = create("fume_gas");
+    public static final ResourceKey<DamageType> TOXIN = create("toxin");
 
     private static ResourceKey<DamageType> create(String name) {
         return ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation(EtherealExploration.MOD_ID, name));

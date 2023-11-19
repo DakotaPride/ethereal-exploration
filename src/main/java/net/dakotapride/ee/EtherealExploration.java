@@ -28,6 +28,8 @@ public class EtherealExploration {
         // Register the commonSetup method for modloading
         bus.addListener(this::commonSetup);
 
+        EETags.init();
+        EEDim.init();
         EEItems.init();
         EERegistry.ITEMS.register(bus);
         EEBlocks.init();

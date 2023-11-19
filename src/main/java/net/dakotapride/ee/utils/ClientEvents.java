@@ -2,9 +2,7 @@ package net.dakotapride.ee.utils;
 
 import net.dakotapride.ee.EtherealExploration;
 import net.dakotapride.ee.entity.FumeGasEntity;
-import net.dakotapride.ee.entity.render.FumeGasRenderer;
-import net.dakotapride.ee.entity.render.FumeRenderer;
-import net.dakotapride.ee.entity.render.OutburstRenderer;
+import net.dakotapride.ee.entity.render.*;
 import net.dakotapride.ee.registry.EEEntities;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
@@ -20,6 +18,11 @@ public class ClientEvents {
     public static void onClientSetup(FMLClientSetupEvent event) {
         EntityRenderers.register(EEEntities.OUTBURST.get(), OutburstRenderer::new);
         EntityRenderers.register(EEEntities.FUME.get(), FumeRenderer::new);
+        // Predator
+        EntityRenderers.register(EEEntities.AQUADINE.get(), AquadineRenderer::new);
+        // Prey for the Aquadine mob
+        EntityRenderers.register(EEEntities.DEPHELINGUS.get(), DephelingusRenderer::new);
+
         EntityRenderers.register(EEEntities.FUME_GAS.get(), FumeGasRenderer::new);
     }
 }

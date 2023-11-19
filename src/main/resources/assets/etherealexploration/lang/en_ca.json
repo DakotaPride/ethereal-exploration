@@ -1,12 +1,25 @@
 {
   "entity.etherealexploration.outburst": "Outburst",
   "entity.etherealexploration.fume": "Fume",
+  "entity.etherealexploration.aquadine": "Aquadine",
   "entity.etherealexploration.fume_gas": "Clump of Toxic Gas",
+
+  "effect.etherealexploration.toxin": "Toxin",
 
   "death.attack.etherealexploration.projectile.fume_gas": "%s was inflicted by toxic fumes",
   "death.attack.etherealexploration.projectile.fume_gas.player": "%s was inflicted by toxic fumes produced by %2$s",
+  "death.attack.etherealexploration.toxin": "%s was intoxicated",
+  "death.attack.etherealexploration.toxin.player": "%s was intoxicated whilst sprinting away from %2$s",
+
+  "item.etherealexploration.aquadine": "Raw Aquadine",
+  "item.etherealexploration.aquadine_bucket": "Bucket of Aquadine",
 
   "block.etherealexploration.hardened_sludge": "Block of Hardened Sludge",
   "block.etherealexploration.industrial_iron_block": "Block of Industrial Iron",
-  "block.etherealexploration.bleak_stone": "Bleak Stone"
+  "block.etherealexploration.bleak_stone": "Bleak Stone",
+  "block.etherealexploration.sludge_covered_grass_block": "Sludge Covered Grass Block",
+  "block.etherealexploration.dingy_dirt": "Dingy Dirt",
+  "block.etherealexploration.bleak_iron_ore": "Bleak Iron Ore",
+  "block.etherealexploration.bleak_gold_ore": "Bleak Gold Ore",
+  "block.etherealexploration.bleak_coal_ore": "Bleak Coal Ore"
 }

@@ -1,0 +1,14 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": [
+    "etherealexploration:wastes",
+    "etherealexploration:rocky_wastes",
+    "etherealexploration:bountiful_rocky_wastes"
+  ],
+  "spawners": {
+    "type": "etherealexploration:aquadine",
+    "weight": 10,
+    "minCount": 3,
+    "maxCount": 7
+  }
+}
