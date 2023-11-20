@@ -14,7 +14,6 @@ import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.projectile.SmallFireball;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.pathfinder.BlockPathTypes;
 import org.jetbrains.annotations.NotNull;
@@ -70,10 +69,10 @@ public class FumeEntity extends Monster implements GeoEntity {
         }
 
         if (this.level().isClientSide) {
-            if (this.random.nextInt(24) == 0 && !this.isSilent()) {
-                this.level().playLocalSound(this.getX() + 0.5D, this.getY() + 0.5D, this.getZ() + 0.5D, SoundEvents.STONE_FALL,
-                        this.getSoundSource(), 1.0F + this.random.nextFloat(), this.random.nextFloat() * 0.7F + 0.3F, false);
-            }
+            // if (this.random.nextInt(24) == 0 && !this.isSilent()) {
+            //                this.level().playLocalSound(this.getX() + 0.5D, this.getY() + 0.5D, this.getZ() + 0.5D, SoundEvents.UI_STONECUTTER_TAKE_RESULT,
+            //                        this.getSoundSource(), 1.0F + this.random.nextFloat(), this.random.nextFloat() * 0.7F + 0.3F, false);
+            //            }
 
             for(int i = 0; i < 0.5; ++i) {
                 this.level().addParticle(EEParticles.SMALL_FUMES.get(), this.getRandomX(0.5D), this.getRandomY(), this.getRandomZ(0.5D), 0.0D, 0.0D, 0.0D);

@@ -2,7 +2,6 @@ package net.dakotapride.ee;
 
 import com.mojang.logging.LogUtils;
 import net.dakotapride.ee.registry.*;
-import net.dakotapride.ee.utils.EERegistry;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.server.ServerStartingEvent;
@@ -30,17 +29,14 @@ public class EtherealExploration {
 
         EETags.init();
         EEDim.init();
-        EEItems.init();
-        EERegistry.ITEMS.register(bus);
-        EEBlocks.init();
-        EERegistry.BLOCKS.register(bus);
-        EEEffects.init();
-        EERegistry.EFFECTS.register(bus);
-        EEEntities.init();
-        EERegistry.ENTITIES.register(bus);
-        EERegistry.CREATIVE_MODE_TABS.register(bus);
-        EEParticles.init();
-        EERegistry.PARTICLES.register(bus);
+        EEItems.init(bus);
+        EEBlocks.init(bus);
+        EEEffects.init(bus);
+        EEEntities.init(bus);
+        EEParticles.init(bus);
+        EEFluids.init(bus);
+        EEFluids.Types.init(bus);
+        EEItems.Tab.CREATIVE_MODE_TABS.register(bus);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);

@@ -12,7 +12,12 @@
   "death.attack.etherealexploration.toxin.player": "%s was intoxicated whilst sprinting away from %2$s",
 
   "item.etherealexploration.aquadine": "Raw Aquadine",
+  "item.etherealexploration.cooked_aquadine": "Cooked Aquadine",
   "item.etherealexploration.aquadine_bucket": "Bucket of Aquadine",
+  "item.etherealexploration.dephelingus": "Raw Dephelingus",
+  "item.etherealexploration.cooked_dephelingus": "Cooked Dephelingus",
+  "item.etherealexploration.dephelingus_bucket": "Bucket of Dephelingus",
+  "item.etherealexploration.sludge_bucket": "Bucket of Sludge",
 
   "block.etherealexploration.hardened_sludge": "Block of Hardened Sludge",
   "block.etherealexploration.industrial_iron_block": "Block of Industrial Iron",

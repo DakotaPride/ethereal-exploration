@@ -1,12 +1,12 @@
 package net.dakotapride.ee.utils;
 
 import net.dakotapride.ee.EtherealExploration;
-import net.dakotapride.ee.entity.FumeGasEntity;
 import net.dakotapride.ee.entity.render.*;
 import net.dakotapride.ee.registry.EEEntities;
+import net.dakotapride.ee.registry.EEFluids;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRenderers;
-import net.minecraft.client.renderer.entity.ThrownItemRenderer;
-import net.minecraft.world.entity.EntityType;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -24,5 +24,9 @@ public class ClientEvents {
         EntityRenderers.register(EEEntities.DEPHELINGUS.get(), DephelingusRenderer::new);
 
         EntityRenderers.register(EEEntities.FUME_GAS.get(), FumeGasRenderer::new);
+
+
+        ItemBlockRenderTypes.setRenderLayer(EEFluids.SOURCE_SLUDGE.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(EEFluids.FLOWING_SLUDGE.get(), RenderType.translucent());
     }
 }

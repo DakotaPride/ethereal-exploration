@@ -9,12 +9,14 @@ public enum EEFoods {
             .nutrition(4).saturationMod(0.2F)
             .effect(() -> new MobEffectInstance(EEEffects.TOXIN.get(), 200, 0), 0.9F)
             .effect(() -> new MobEffectInstance(MobEffects.CONFUSION, 120, 0), 0.4F).build()),
-    COOKED_AQUADINE(new FoodProperties.Builder().build()),
+    COOKED_AQUADINE(new FoodProperties.Builder()
+            .nutrition(8).saturationMod(0.4F).build()),
     RAW_DEPHELINGUS(new FoodProperties.Builder()
             .nutrition(4).saturationMod(0.2F)
             .effect(() -> new MobEffectInstance(MobEffects.GLOWING, 240, 0), 0.85F)
             .effect(() -> new MobEffectInstance(MobEffects.CONFUSION, 120, 0), 0.4F).build()),
-    COOKED_DEPHELINGUS(new FoodProperties.Builder().build());
+    COOKED_DEPHELINGUS(new FoodProperties.Builder()
+            .nutrition(8).saturationMod(0.4F).build());
 
     final FoodProperties properties;
 

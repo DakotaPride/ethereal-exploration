@@ -381,7 +381,6 @@
           }
         }
       },
-
       {
         "type": "minecraft:sequence",
         "sequence": [
@@ -400,10 +399,10 @@
                   "type": "minecraft:condition",
                   "if_true": {
                     "type": "minecraft:stone_depth",
-                    "add_surface_depth": false,
                     "offset": 0,
-                    "secondary_depth_range": 0,
-                    "surface_type": "floor"
+                    "surface_type": "floor",
+                    "add_surface_depth": false,
+                    "secondary_depth_range": 0
                   },
                   "then_run": {
                     "type": "minecraft:block",
@@ -416,10 +415,10 @@
                   "type": "minecraft:condition",
                   "if_true": {
                     "type": "minecraft:stone_depth",
-                    "add_surface_depth": false,
                     "offset": 0,
-                    "secondary_depth_range": 8,
-                    "surface_type": "floor"
+                    "surface_type": "floor",
+                    "add_surface_depth": false,
+                    "secondary_depth_range": 8
                   },
                   "then_run": {
                     "type": "minecraft:block",
@@ -433,11 +432,31 @@
                   "result_state": {
                     "Name": "etherealexploration:bleak_stone"
                   }
+                },
+                {
+                  "type": "minecraft:condition",
+                  "if_true": {
+                    "type": "minecraft:water",
+                    "offset": 0,
+                    "surface_depth_multiplier": 0,
+                    "add_stone_depth": false
+                  },
+                  "then_run": {
+                    "type": "minecraft:condition",
+                    "if_true": {
+                      "type": "minecraft:above_preliminary_surface"
+                    },
+                    "then_run": {
+                      "type": "minecraft:block",
+                      "result_state": {
+                        "Name": "etherealexploration:dingy_dirt"
+                      }
+                    }
+                  }
                 }
               ]
             }
           },
-
           {
             "type": "minecraft:condition",
             "if_true": {
@@ -452,6 +471,22 @@
               "result_state": {
                 "Name": "etherealexploration:bleak_stone"
               }
+            }
+          },
+          {
+            "type": "minecraft:condition",
+            "if_true": {
+              "type": "minecraft:biome",
+              "biome_is": [
+                "etherealexploration:wastes",
+                "etherealexploration:rocky_wastes",
+                "etherealexploration:bountiful_rocky_wastes"
+              ]
+            },
+            "then_run": {
+              // "default_fluid" set to "etherealexploration:sludge"
+              "type": "minecraft:sequence",
+              "sequence": []
             }
           }
         ]

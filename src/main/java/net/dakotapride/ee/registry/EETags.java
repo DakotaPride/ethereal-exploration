@@ -9,11 +9,13 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobType;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.material.Fluid;
 
 @SuppressWarnings("unused")
 public class EETags {
     public static TagKey<Block> CAN_DROP_EXPERIENCE_ORES = tag("can_drop_experience/ores", Registries.BLOCK);
     public static TagKey<EntityType<?>> IMMUNE_TO_TOXIN = tag("immune/toxin", Registries.ENTITY_TYPE);
+    public static TagKey<Fluid> SLUDGE_FLUID = tag("sludge", Registries.FLUID);
 
 
     private static <F> TagKey<F> tag(String name, ResourceKey<Registry<F>> key) {
