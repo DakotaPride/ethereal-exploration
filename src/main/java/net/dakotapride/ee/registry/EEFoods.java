@@ -7,7 +7,7 @@ import net.minecraft.world.food.FoodProperties;
 public enum EEFoods {
     RAW_AQUADINE(new FoodProperties.Builder()
             .nutrition(4).saturationMod(0.2F)
-            .effect(() -> new MobEffectInstance(EEEffects.TOXIN.get(), 200, 0), 0.9F)
+            .effect(() -> new MobEffectInstance(EEEffects.PESTILENT.get(), 200, 0), 0.9F)
             .effect(() -> new MobEffectInstance(MobEffects.CONFUSION, 120, 0), 0.4F).build()),
     COOKED_AQUADINE(new FoodProperties.Builder()
             .nutrition(8).saturationMod(0.4F).build()),

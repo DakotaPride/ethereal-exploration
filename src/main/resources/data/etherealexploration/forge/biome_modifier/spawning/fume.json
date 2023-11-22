@@ -7,7 +7,7 @@
   ],
   "spawners": {
     "type": "etherealexploration:fume",
-    "weight": 40,
+    "weight": 10,
     "minCount": 2,
     "maxCount": 4
   }

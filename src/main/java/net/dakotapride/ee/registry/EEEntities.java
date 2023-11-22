@@ -27,7 +27,7 @@ public class EEEntities {
                     .sized(0.65f, 0.6f)
                     .build(new ResourceLocation(EtherealExploration.MOD_ID, "aquadine").toString()));
     public static RegistryObject<EntityType<DephelingusEntity>> DEPHELINGUS = ENTITIES.register("dephelingus",
-            () -> EntityType.Builder.of(DephelingusEntity::new, MobCategory.WATER_CREATURE)
+            () -> EntityType.Builder.of(DephelingusEntity::new, MobCategory.WATER_AMBIENT)
                     .sized(0.35f, 0.35f)
                     .build(new ResourceLocation(EtherealExploration.MOD_ID, "dephelingus").toString()));
 

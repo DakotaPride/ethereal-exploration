@@ -1,9 +1,12 @@
 package net.dakotapride.ee;
 
 import com.mojang.logging.LogUtils;
+import net.dakotapride.ee.effect.BrewingRecipe;
 import net.dakotapride.ee.registry.*;
+import net.minecraft.world.item.alchemy.Potions;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -32,11 +35,12 @@ public class EtherealExploration {
         EEItems.init(bus);
         EEBlocks.init(bus);
         EEEffects.init(bus);
+        EEEffects.Potions.init(bus);
         EEEntities.init(bus);
         EEParticles.init(bus);
         EEFluids.init(bus);
         EEFluids.Types.init(bus);
-        EEItems.Tab.CREATIVE_MODE_TABS.register(bus);
+        EEItems.Tab.init(bus);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);

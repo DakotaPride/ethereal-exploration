@@ -1,16 +1,21 @@
 package net.dakotapride.ee.block;
 
+import net.dakotapride.ee.registry.EEDamageSources;
 import net.dakotapride.ee.registry.EEParticles;
+import net.dakotapride.ee.registry.EETags;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.material.FlowingFluid;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.function.Supplier;
 
 public class SludgeBlock extends Block {
     float steppingDamage;
@@ -58,6 +63,21 @@ public class SludgeBlock extends Block {
 
         public void setParticles(SimpleParticleType particleType) {
             this.particleType = particleType;
+        }
+    }
+
+    public static class Liquid extends LiquidBlock {
+        public Liquid(Supplier<? extends FlowingFluid> fluid, Properties properties) {
+            super(fluid, properties);
+        }
+
+        @Override
+        public void entityInside(@NotNull BlockState state, @NotNull Level level, @NotNull BlockPos pos, @NotNull Entity entity) {
+            super.entityInside(state, level, pos, entity);
+
+            if (!(entity.getType().is(EETags.IMMUNE_TO_ACIDIC_DAMAGE))) {
+                entity.hurt(entity.damageSources().source(EEDamageSources.ACID), 4.0F);
+            }
         }
     }
 }

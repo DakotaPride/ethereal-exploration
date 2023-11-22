@@ -15,7 +15,17 @@ public class AquadineRenderer extends GeoEntityRenderer<AquadineEntity> {
     }
 
     @Override
-    public @NotNull ResourceLocation getTextureLocation(@NotNull AquadineEntity animatable) {
-        return new ResourceLocation(EtherealExploration.MOD_ID, "textures/entity/aquadine.png");
+    public @NotNull ResourceLocation getTextureLocation(@NotNull AquadineEntity entity) {
+        return entity.hasCustomName() &&
+
+                // Gobber2 Easter Egg Goober
+                "goober".equalsIgnoreCase(entity.getName().getString()) ?
+                new ResourceLocation(EtherealExploration.MOD_ID, "textures/entity/goober.png")
+
+                // Dejojo Animal Crossing Stream Easter Egg ORNG
+                : "orng".equalsIgnoreCase(entity.getName().getString()) ?
+                new ResourceLocation(EtherealExploration.MOD_ID, "textures/entity/orng.png")
+
+                : new ResourceLocation(EtherealExploration.MOD_ID, "textures/entity/aquadine.png");
     }
 }

@@ -18,7 +18,32 @@
       "offset": 2
     }
   },
-  "spawners": {},
+  "spawners": {
+    "monster": [
+      {
+        "type": "etherealexploration:fume",
+        "weight": 10,
+        "minCount": 1,
+        "maxCount": 3
+      }
+    ],
+    "water_creature": [
+      {
+        "type": "etherealexploration:aquadine",
+        "weight": 100,
+        "minCount": 3,
+        "maxCount": 7
+      }
+    ],
+    "water_ambient": [
+      {
+        "type": "etherealexploration:dephelingus",
+        "weight": 150,
+        "minCount": 2,
+        "maxCount": 4
+      }
+    ]
+  },
   "spawn_costs": {},
   "carvers": {
     "air": [

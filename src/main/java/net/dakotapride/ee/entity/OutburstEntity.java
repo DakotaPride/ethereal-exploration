@@ -1,5 +1,7 @@
 package net.dakotapride.ee.entity;
 
+import net.dakotapride.ee.registry.EEEffects;
+import net.minecraft.advancements.Advancement;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
@@ -24,6 +26,7 @@ import java.util.Collection;
 @SuppressWarnings("unused")
 public class OutburstEntity extends Monster implements PowerableMob, GeoEntity {
     private AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
+    // boolean isExploding;
 
     public OutburstEntity(EntityType<? extends Monster> entityType, Level level) {
         super(entityType, level);
@@ -64,12 +67,19 @@ public class OutburstEntity extends Monster implements PowerableMob, GeoEntity {
 
     private <T extends GeoAnimatable> PlayState predicate(AnimationState<T> state) {
         if (state.isMoving()) {
-
-            return PlayState.CONTINUE;
-        } else {
-            state.getController().setAnimation(RawAnimation.begin().then("animation.outburst.idle", Animation.LoopType.LOOP));
-            return PlayState.CONTINUE;
+            state.getController().setAnimation(RawAnimation.begin().then("animation.outburst.walking", Animation.LoopType.LOOP));
         }
+
+        // else if (this.isExploding) {
+        //            OutburstEntity.this.getNavigation().stop();
+        //            state.getController().setAnimation(RawAnimation.begin().then("animation.outburst.explosion", Animation.LoopType.PLAY_ONCE));
+        //        }
+
+        else {
+            state.getController().setAnimation(RawAnimation.begin().then("animation.outburst.idle", Animation.LoopType.LOOP));
+        }
+
+        return PlayState.CONTINUE;
     }
 
     @Override
@@ -78,14 +88,51 @@ public class OutburstEntity extends Monster implements PowerableMob, GeoEntity {
     }
 
     @Override
-    public void tick() {
-        super.tick();
+    public void baseTick() {
+        super.baseTick();
         LivingEntity entity = this.getTarget();
 
-        if (entity instanceof Player player && this.distanceToSqr(entity) < 9.0D && !(player.getAbilities().instabuild)) {
+        // if (entity instanceof Player player && this.distanceToSqr(entity) < 3.0D) {
+        //            isExploding = true;
+        //        } else {
+        //            isExploding = false;
+        //        }
+
+        if (entity instanceof Player player && this.distanceToSqr(entity) < 9.0D && !(player.getAbilities().instabuild)
+                && !(player.hasEffect(EEEffects.AVOIDANCE.get()))) {
             this.provideExplosion();
         }
     }
+
+    @Override
+    public boolean doHurtTarget(@NotNull Entity entity) {
+        if (!super.doHurtTarget(entity)) {
+            return false;
+        } else {
+            if (entity instanceof Player player && this.distanceToSqr(entity) < 9.0D && !(player.getAbilities().instabuild)
+                    && player.hasEffect(EEEffects.AVOIDANCE.get())) {
+                ((LivingEntity)entity).addEffect(new MobEffectInstance(EEEffects.PESTILENT.get(), 200), this);
+            }
+
+            return true;
+        }
+    }
+
+    // @Override
+    //    public void tick() {
+    //        super.tick();
+    //        LivingEntity entity = this.getTarget();
+    //
+    //        if (entity instanceof Player player && this.distanceToSqr(entity) < 3.0D) {
+    //            isExploding = true;
+    //        } else {
+    //            isExploding = false;
+    //        }
+    //
+    //        if (entity instanceof Player player && this.distanceToSqr(entity) < 9.0D && !(player.getAbilities().instabuild) && isExploding) {
+    //            this.provideExplosion();
+    //        }
+    //    }
 
     private void provideExplosion() {
         if (!this.level().isClientSide) {

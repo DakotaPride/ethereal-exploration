@@ -31,7 +31,7 @@ public class EEBlocks {
     public static RegistryObject<Block> BLEAK_IRON_ORE = block("bleak_iron_ore", () -> new BleakOreBlock(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)));
     public static RegistryObject<Block> BLEAK_GOLD_ORE = block("bleak_gold_ore", () -> new BleakOreBlock(BlockBehaviour.Properties.copy(Blocks.GOLD_ORE)));
     public static RegistryObject<Block> BLEAK_COAL_ORE = block("bleak_coal_ore", () -> new BleakOreBlock(BlockBehaviour.Properties.copy(Blocks.COAL_ORE)));
-    public static RegistryObject<LiquidBlock> SLUDGE_FLUID = BLOCKS.register("sludge", () -> new LiquidBlock(EEFluids.SOURCE_SLUDGE,
+    public static RegistryObject<LiquidBlock> SLUDGE_FLUID = BLOCKS.register("sludge", () -> new SludgeBlock.Liquid(EEFluids.SOURCE_SLUDGE,
             BlockBehaviour.Properties.copy(Blocks.WATER).mapColor(MapColor.COLOR_LIGHT_GREEN).lightLevel((state) -> 15)));
 
     public static void init(IEventBus bus) {

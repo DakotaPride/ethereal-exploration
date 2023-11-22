@@ -1,11 +1,18 @@
-package net.dakotapride.ee.fluid;
+package net.dakotapride.ee.fluid.type;
 
 import com.mojang.blaze3d.shaders.FogShape;
 import com.mojang.blaze3d.systems.RenderSystem;
+import net.dakotapride.ee.registry.EEEffects;
+import net.dakotapride.ee.registry.EEFluids;
 import net.minecraft.client.Camera;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.renderer.FogRenderer;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.client.extensions.common.IClientFluidTypeExtensions;
 import net.minecraftforge.fluids.FluidType;
 import org.jetbrains.annotations.NotNull;
@@ -68,6 +75,10 @@ public class BaseFluidType extends FluidType {
         return fogColor;
     }
 
+    public boolean getType(FluidType type) {
+        return this == type;
+    }
+
     @Override
     public void initializeClient(Consumer<IClientFluidTypeExtensions> consumer) {
         consumer.accept(new IClientFluidTypeExtensions() {
@@ -100,8 +111,18 @@ public class BaseFluidType extends FluidType {
             @Override
             public void modifyFogRender(Camera camera, FogRenderer.FogMode mode, float renderDistance, float partialTick,
                                         float nearDistance, float farDistance, FogShape shape) {
-                RenderSystem.setShaderFogStart(1f);
-                RenderSystem.setShaderFogEnd(6f); // distance when the fog starts
+                Entity entity = camera.getEntity();
+                MobEffect effect = EEEffects.TOXIC_VISION.get();
+
+                if (entity instanceof Player player) {
+                    RenderSystem.setShaderFogStart(1F);
+
+                    if (player.hasEffect(effect) && getType(EEFluids.Types.SLUDGE_FLUID_TYPE.get())) {
+                        RenderSystem.setShaderFogEnd(48F); // distance when the fog starts
+                    } else {
+                        RenderSystem.setShaderFogEnd(12F); // distance when the fog starts
+                    }
+                }
             }
         });
     }
