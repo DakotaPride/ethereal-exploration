@@ -16,6 +16,7 @@ import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.pathfinder.BlockPathTypes;
+import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
 import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.core.animatable.GeoAnimatable;
@@ -29,6 +30,9 @@ import java.util.EnumSet;
 public class FumeEntity extends Monster implements GeoEntity {
     private AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
 
+    private float allowedHeightOffset = 0.5F;
+    private int nextHeightOffsetChangeTick;
+
     public FumeEntity(EntityType<? extends Monster> entity, Level level) {
         super(entity, level);
         this.setPathfindingMalus(BlockPathTypes.WATER, -1.0F);
@@ -36,6 +40,29 @@ public class FumeEntity extends Monster implements GeoEntity {
         this.setPathfindingMalus(BlockPathTypes.DANGER_FIRE, 0.0F);
         this.setPathfindingMalus(BlockPathTypes.DAMAGE_FIRE, 0.0F);
         this.xpReward = 10;
+    }
+
+    @Override
+    public boolean isSensitiveToWater() {
+        return true;
+    }
+
+    @Override
+    protected void customServerAiStep() {
+        --this.nextHeightOffsetChangeTick;
+        if (this.nextHeightOffsetChangeTick <= 0) {
+            this.nextHeightOffsetChangeTick = 100;
+            this.allowedHeightOffset = (float)this.random.triangle(0.5D, 6.891D);
+        }
+
+        LivingEntity livingentity = this.getTarget();
+        if (livingentity != null && livingentity.getEyeY() > this.getEyeY() + (double)this.allowedHeightOffset && this.canAttack(livingentity)) {
+            Vec3 vec3 = this.getDeltaMovement();
+            this.setDeltaMovement(this.getDeltaMovement().add(0.0D, ((double)0.3F - vec3.y) * (double)0.3F, 0.0D));
+            this.hasImpulse = true;
+        }
+
+        super.customServerAiStep();
     }
 
     public static AttributeSupplier createAttributes() {
@@ -113,23 +140,28 @@ public class FumeEntity extends Monster implements GeoEntity {
             this.setFlags(EnumSet.of(Goal.Flag.MOVE, Goal.Flag.LOOK));
         }
 
+        @Override
         public boolean canUse() {
             LivingEntity livingentity = this.fume.getTarget();
             return livingentity != null && livingentity.isAlive() && this.fume.canAttack(livingentity);
         }
 
+        @Override
         public void start() {
             this.attackStep = 0;
         }
 
+        @Override
         public void stop() {
             this.lastSeen = 0;
         }
 
+        @Override
         public boolean requiresUpdateEveryTick() {
             return true;
         }
 
+        @Override
         public void tick() {
             --this.attackTime;
             LivingEntity livingentity = this.fume.getTarget();

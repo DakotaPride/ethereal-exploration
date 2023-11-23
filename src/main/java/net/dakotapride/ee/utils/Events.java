@@ -2,10 +2,7 @@ package net.dakotapride.ee.utils;
 
 import net.dakotapride.ee.EtherealExploration;
 import net.dakotapride.ee.effect.BrewingRecipe;
-import net.dakotapride.ee.entity.AquadineEntity;
-import net.dakotapride.ee.entity.DephelingusEntity;
-import net.dakotapride.ee.entity.FumeEntity;
-import net.dakotapride.ee.entity.OutburstEntity;
+import net.dakotapride.ee.entity.*;
 import net.dakotapride.ee.particle.FumesParticle;
 import net.dakotapride.ee.registry.*;
 import net.minecraft.client.Minecraft;
@@ -39,6 +36,7 @@ public class Events {
         event.put(EEEntities.FUME.get(), FumeEntity.createAttributes());
         event.put(EEEntities.AQUADINE.get(), AquadineEntity.createAttributes().build());
         event.put(EEEntities.DEPHELINGUS.get(), DephelingusEntity.createAttributes().build());
+        event.put(EEEntities.DEVIANT.get(), DeviantEntity.createAttributes());
     }
 
     @SubscribeEvent(priority = EventPriority.LOWEST)

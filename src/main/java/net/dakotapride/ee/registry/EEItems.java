@@ -33,6 +33,12 @@ public class EEItems {
             () -> new ForgeSpawnEggItem(() -> EEEntities.AQUADINE.get(), 0x2D601A, 0xDCFF84, new Item.Properties()));
     public static RegistryObject<Item> DEPHELINGUS_SPAWN_EGG = ITEMS.register("dephelingus_spawn_egg",
             () -> new ForgeSpawnEggItem(() -> EEEntities.DEPHELINGUS.get(), 0x668C7B, 0xDCFF84, new Item.Properties()));
+    public static RegistryObject<Item> FUME_SPAWN_EGG = ITEMS.register("fume_spawn_egg",
+            () -> new ForgeSpawnEggItem(() -> EEEntities.FUME.get(), 0x32513B, 0xF5FFFE, new Item.Properties()));
+    public static RegistryObject<Item> DEVIANT_SPAWN_EGG = ITEMS.register("deviant_spawn_egg",
+            () -> new ForgeSpawnEggItem(() -> EEEntities.DEVIANT.get(), 0xA7CCC1, 0x223A2A, new Item.Properties()));
+    public static RegistryObject<Item> OUTBURST_SPAWN_EGG = ITEMS.register("outburst_spawn_egg",
+            () -> new ForgeSpawnEggItem(() -> EEEntities.OUTBURST.get(), 0x7AF276, 0x0F5723, new Item.Properties()));
 
     public static void init(IEventBus bus) {
         ITEMS.register(bus);
@@ -56,6 +62,9 @@ public class EEItems {
             public static class Wastes extends Module implements CreativeModeTab.DisplayItemsGenerator {
 
                 public void spawnEggs(CreativeModeTab.@NotNull Output output) {
+                    output.accept(EEItems.OUTBURST_SPAWN_EGG.get());
+                    output.accept(EEItems.FUME_SPAWN_EGG.get());
+                    output.accept(EEItems.DEVIANT_SPAWN_EGG.get());
                     output.accept(EEItems.AQUADINE_SPAWN_EGG.get());
                     output.accept(EEItems.DEPHELINGUS_SPAWN_EGG.get());
                 }
@@ -70,10 +79,12 @@ public class EEItems {
                     output.accept(EEBlocks.BLEAK_COAL_ORE.get().asItem());
 
                     output.accept(EEBlocks.INDUSTRIAL_IRON_BLOCK.get().asItem());
+                    output.accept(EEBlocks.HARDENED_SLUDGE_BLOCK.get().asItem());
                 }
 
                 public void items(CreativeModeTab.@NotNull Output output) {
                     sludgeRelatedItems(output);
+                    output.accept(EEItems.SULFURIC_DUST.get());
                 }
 
                 public void displayItems(CreativeModeTab.@NotNull Output output) {
@@ -92,7 +103,6 @@ public class EEItems {
                     output.accept(EEItems.BUCKET_OF_DEPHELINGUS.get());
 
                     output.accept(EEItems.BUCKET_OF_SLUDGE.get());
-                    output.accept(EEBlocks.HARDENED_SLUDGE_BLOCK.get().asItem());
                 }
 
                 @Override

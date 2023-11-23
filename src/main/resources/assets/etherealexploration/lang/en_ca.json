@@ -3,6 +3,7 @@
   "entity.etherealexploration.fume": "Fume",
   "entity.etherealexploration.aquadine": "Aquadine",
   "entity.etherealexploration.dephelingus": "Dephelingus",
+  "entity.etherealexploration.deviant": "Deviant",
   "entity.etherealexploration.fume_gas": "Clump of Toxic Gas",
 
   "effect.etherealexploration.pestilent": "Pestilent",
@@ -38,6 +39,9 @@
   "item.etherealexploration.dephelingus_spawn_egg": "Dephelingus Spawn Egg",
   "item.etherealexploration.sludge_bucket": "Bucket of Sludge",
   "item.etherealexploration.sulfur_dust": "Sulfuric Dust",
+  "item.etherealexploration.fume_spawn_egg": "Fume Spawn Egg",
+  "item.etherealexploration.deviant_spawn_egg": "Deviant Spawn Egg",
+  "item.etherealexploration.outburst_spawn_egg": "Outburst Spawn Egg",
 
   "etherealexploration.tab.wastes": "Ethereal Exploration - Wastes",
 

@@ -38,7 +38,7 @@ public class OutburstEntity extends Monster implements PowerableMob, GeoEntity {
                 .add(Attributes.MAX_HEALTH, 150D)
                 .add(Attributes.ATTACK_DAMAGE, 10.0D)
                 .add(Attributes.ATTACK_SPEED, 1.0D)
-                .add(Attributes.MOVEMENT_SPEED, 0.25D).build();
+                .add(Attributes.MOVEMENT_SPEED, 0.20D).build();
     }
 
     @Override

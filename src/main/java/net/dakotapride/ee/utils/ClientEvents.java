@@ -18,12 +18,14 @@ public class ClientEvents {
     public static void onClientSetup(FMLClientSetupEvent event) {
         EntityRenderers.register(EEEntities.OUTBURST.get(), OutburstRenderer::new);
         EntityRenderers.register(EEEntities.FUME.get(), FumeRenderer::new);
+        EntityRenderers.register(EEEntities.DEVIANT.get(), DeviantRenderer::new);
         // Predator
         EntityRenderers.register(EEEntities.AQUADINE.get(), AquadineRenderer::new);
         // Prey for the Aquadine mob
         EntityRenderers.register(EEEntities.DEPHELINGUS.get(), DephelingusRenderer::new);
 
         EntityRenderers.register(EEEntities.FUME_GAS.get(), FumeGasRenderer::new);
+        EntityRenderers.register(EEEntities.NONDESTRUCTIVE_TNT.get(), NonDescructivePrimedTntRenderer::new);
 
 
         ItemBlockRenderTypes.setRenderLayer(EEFluids.SOURCE_SLUDGE.get(), RenderType.translucent());
