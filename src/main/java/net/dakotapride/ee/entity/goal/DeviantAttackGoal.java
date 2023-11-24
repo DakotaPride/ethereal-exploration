@@ -20,16 +20,14 @@ public class DeviantAttackGoal extends Goal {
     private double pathedTargetZ;
     private int ticksUntilNextPathRecalculation;
     private int ticksUntilNextAttack;
-    private final int attackInterval = 20;
     private long lastCanUseCheck;
-    private static final long COOLDOWN_BETWEEN_CAN_USE_CHECKS = 20L;
     private int failedPathFindingPenalty = 0;
-    private boolean canPenalize = false;
+    private final boolean canPenalize = false;
 
-    public DeviantAttackGoal(PathfinderMob p_25552_, double p_25553_, boolean p_25554_) {
-        this.mob = p_25552_;
-        this.speedModifier = p_25553_;
-        this.followingTargetEvenIfNotSeen = p_25554_;
+    public DeviantAttackGoal(PathfinderMob mob, double speedModifier, boolean canFollowIsNotVisible) {
+        this.mob = mob;
+        this.speedModifier = speedModifier;
+        this.followingTargetEvenIfNotSeen = canFollowIsNotVisible;
         this.setFlags(EnumSet.of(Goal.Flag.MOVE, Goal.Flag.LOOK));
     }
 
@@ -93,7 +91,7 @@ public class DeviantAttackGoal extends Goal {
     public void stop() {
         LivingEntity livingentity = this.mob.getTarget();
         if (!EntitySelector.NO_CREATIVE_OR_SPECTATOR.test(livingentity)) {
-            this.mob.setTarget((LivingEntity)null);
+            this.mob.setTarget(null);
         }
 
         this.mob.setAggressive(false);
@@ -109,7 +107,7 @@ public class DeviantAttackGoal extends Goal {
     public void tick() {
         LivingEntity livingentity = this.mob.getTarget();
         if (livingentity != null) {
-            this.mob.getLookControl().setLookAt(livingentity, 30.0F, 30.0F);
+            // this.mob.getLookControl().setLookAt(livingentity, 30.0F, 30.0F);
             double d0 = this.mob.getPerceivedTargetDistanceSquareForMeleeAttack(livingentity);
             this.ticksUntilNextPathRecalculation = Math.max(this.ticksUntilNextPathRecalculation - 1, 0);
             if ((this.followingTargetEvenIfNotSeen || this.mob.getSensing().hasLineOfSight(livingentity)) && this.ticksUntilNextPathRecalculation <= 0 && (this.pathedTargetX == 0.0D && this.pathedTargetY == 0.0D && this.pathedTargetZ == 0.0D || livingentity.distanceToSqr(this.pathedTargetX, this.pathedTargetY, this.pathedTargetZ) >= 1.0D || this.mob.getRandom().nextFloat() < 0.05F)) {
@@ -161,19 +159,7 @@ public class DeviantAttackGoal extends Goal {
         this.ticksUntilNextAttack = this.adjustedTickDelay(20);
     }
 
-    protected boolean isTimeToAttack() {
-        return this.ticksUntilNextAttack <= 0;
-    }
-
-    protected int getTicksUntilNextAttack() {
-        return this.ticksUntilNextAttack;
-    }
-
-    protected int getAttackInterval() {
-        return this.adjustedTickDelay(20);
-    }
-
     protected double getAttackReachSqr(LivingEntity p_25556_) {
-        return (double)(this.mob.getBbWidth() * 2.0F * this.mob.getBbWidth() * 2.0F + p_25556_.getBbWidth());
+        return this.mob.getBbWidth() * 2.0F * this.mob.getBbWidth() * 2.0F + p_25556_.getBbWidth();
     }
 }
