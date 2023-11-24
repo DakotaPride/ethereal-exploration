@@ -5,6 +5,6 @@ import net.minecraft.world.effect.MobEffectCategory;
 
 public class AvoidanceEffect extends MobEffect {
     public AvoidanceEffect() {
-        super(MobEffectCategory.BENEFICIAL, 0xE1FFBE);
+        super(MobEffectCategory.NEUTRAL, 0xE1FFBE);
     }
 }

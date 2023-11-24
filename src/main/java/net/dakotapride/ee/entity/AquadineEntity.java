@@ -230,7 +230,8 @@ public class AquadineEntity extends WaterAnimal implements GeoEntity, Bucketable
     public static AttributeSupplier.@NotNull Builder createAttributes() {
         return Mob.createMobAttributes()
                 .add(Attributes.MAX_HEALTH, 45.0D)
-                .add(Attributes.ATTACK_DAMAGE, 4.0D);
+                .add(Attributes.ATTACK_DAMAGE, 4.0D)
+                .add(Attributes.FOLLOW_RANGE, 8.0D);
     }
 
     @Override

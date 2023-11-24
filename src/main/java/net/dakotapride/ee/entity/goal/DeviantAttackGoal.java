@@ -5,12 +5,16 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.EntitySelector;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.PathfinderMob;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.Goal;
+import net.minecraft.world.entity.ai.goal.target.TargetGoal;
+import net.minecraft.world.entity.ai.targeting.TargetingConditions;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.pathfinder.Path;
 
 import java.util.EnumSet;
+import java.util.function.Predicate;
 
 public class DeviantAttackGoal extends Goal {
     protected final PathfinderMob mob;
@@ -25,12 +29,18 @@ public class DeviantAttackGoal extends Goal {
     private long lastCanUseCheck;
     private int failedPathFindingPenalty = 0;
     private final boolean canPenalize = false;
+    protected TargetingConditions targetConditions;
 
-    public DeviantAttackGoal(PathfinderMob mob, double speedModifier, boolean canFollowIsNotVisible) {
+    public DeviantAttackGoal(PathfinderMob mob, double speedModifier, boolean canFollowIsNotVisible, Predicate<LivingEntity> predicate) {
         this.mob = mob;
         this.speedModifier = speedModifier;
         this.followingTargetEvenIfNotSeen = canFollowIsNotVisible;
         this.setFlags(EnumSet.of(Goal.Flag.MOVE));
+        this.targetConditions = TargetingConditions.forCombat().range(this.getFollowDistance()).selector(predicate);
+    }
+
+    protected double getFollowDistance() {
+        return this.mob.getAttributeValue(Attributes.FOLLOW_RANGE);
     }
 
     @Override
@@ -155,6 +165,6 @@ public class DeviantAttackGoal extends Goal {
     }
 
     protected void resetAttackCooldown() {
-        this.ticksUntilNextAttack = this.adjustedTickDelay(200);
+        this.ticksUntilNextAttack = this.adjustedTickDelay(140);
     }
 }

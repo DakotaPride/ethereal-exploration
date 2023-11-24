@@ -206,7 +206,8 @@ public class DephelingusEntity extends WaterAnimal implements GeoEntity, Bucketa
 
     public static AttributeSupplier.@NotNull Builder createAttributes() {
         return Mob.createMobAttributes()
-                .add(Attributes.MAX_HEALTH, 15.0D);
+                .add(Attributes.MAX_HEALTH, 15.0D)
+                .add(Attributes.FOLLOW_RANGE, 8.0D);
     }
 
     @Override

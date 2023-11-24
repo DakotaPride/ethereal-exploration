@@ -70,7 +70,8 @@ public class FumeEntity extends Monster implements GeoEntity {
                 .add(Attributes.MAX_HEALTH, 50D)
                 .add(Attributes.ATTACK_DAMAGE, 8.0D)
                 .add(Attributes.ATTACK_SPEED, 1.0D)
-                .add(Attributes.MOVEMENT_SPEED, 0.15D).build();
+                .add(Attributes.MOVEMENT_SPEED, 0.15D)
+                .add(Attributes.FOLLOW_RANGE, 24.0D).build();
     }
 
     @Override

@@ -3,7 +3,8 @@ package net.dakotapride.ee.entity;
 import net.dakotapride.ee.entity.goal.DeviantAttackGoal;
 import net.dakotapride.ee.registry.EEEffects;
 import net.minecraft.core.BlockPos;
-import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -27,8 +28,6 @@ import software.bernie.geckolib.core.animatable.instance.SingletonAnimatableInst
 import software.bernie.geckolib.core.animation.AnimationState;
 import software.bernie.geckolib.core.animation.*;
 import software.bernie.geckolib.core.object.PlayState;
-
-import java.util.Collection;
 
 @SuppressWarnings("unused")
 public class DeviantEntity extends Monster implements GeoEntity, FlyingAnimal {
@@ -84,7 +83,8 @@ public class DeviantEntity extends Monster implements GeoEntity, FlyingAnimal {
                 .add(Attributes.ATTACK_DAMAGE, 4.0D)
                 .add(Attributes.ATTACK_SPEED, 1.0D)
                 .add(Attributes.MOVEMENT_SPEED, 0.20D)
-                .add(Attributes.FLYING_SPEED, 0.15D).build();
+                .add(Attributes.FLYING_SPEED, 0.15D)
+                .add(Attributes.FOLLOW_RANGE, 16.0D).build();
     }
 
     @Override
@@ -95,12 +95,16 @@ public class DeviantEntity extends Monster implements GeoEntity, FlyingAnimal {
     @Override
     protected void registerGoals() {
         this.goalSelector.addGoal(1, new FloatGoal(this));
-        this.goalSelector.addGoal(4, new DeviantAttackGoal(this, 1.0D, false));
+        this.goalSelector.addGoal(4, new DeviantAttackGoal(this, 1.0D, false, this::getConditionsBasedOnTarget));
         this.goalSelector.addGoal(5, new WaterAvoidingRandomStrollGoal(this, 0.8D));
         this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, 8.0F));
         this.goalSelector.addGoal(6, new RandomLookAroundGoal(this));
         this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Player.class, true));
         this.targetSelector.addGoal(2, new HurtByTargetGoal(this));
+    }
+
+    public boolean getConditionsBasedOnTarget(LivingEntity entity) {
+        return !entity.hasEffect(MobEffects.INVISIBILITY);
     }
 
     @Override
