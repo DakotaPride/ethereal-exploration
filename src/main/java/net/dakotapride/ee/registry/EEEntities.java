@@ -40,7 +40,7 @@ public class EEEntities {
                     .sized(0.4f, 0.4f)
                     .build(new ResourceLocation(EtherealExploration.MOD_ID, "fume_gas").toString()));
     public static RegistryObject<EntityType<NonDestructivePrimedTntEntity>> NONDESTRUCTIVE_TNT = ENTITIES.register("nondestructive_tnt",
-            () -> EntityType.Builder.of(NonDestructivePrimedTntEntity::new, MobCategory.MISC)
+            () -> EntityType.Builder.<NonDestructivePrimedTntEntity>of(NonDestructivePrimedTntEntity::new, MobCategory.MISC)
                     .sized(0.9f, 0.9f)
                     .build(new ResourceLocation(EtherealExploration.MOD_ID, "nondestructive_tnt").toString()));
 
