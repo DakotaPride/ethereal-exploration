@@ -77,23 +77,13 @@ public class EEItems {
                     output.accept(EEBlocks.BLEAK_IRON_ORE.get().asItem());
                     output.accept(EEBlocks.BLEAK_GOLD_ORE.get().asItem());
                     output.accept(EEBlocks.BLEAK_COAL_ORE.get().asItem());
+                    output.accept(EEBlocks.BLEAK_SULFUR_ORE.get().asItem());
 
                     output.accept(EEBlocks.INDUSTRIAL_IRON_BLOCK.get().asItem());
                     output.accept(EEBlocks.HARDENED_SLUDGE_BLOCK.get().asItem());
                 }
 
                 public void items(CreativeModeTab.@NotNull Output output) {
-                    sludgeRelatedItems(output);
-                    output.accept(EEItems.SULFURIC_DUST.get());
-                }
-
-                public void displayItems(CreativeModeTab.@NotNull Output output) {
-                    items(output);
-                    blocks(output);
-                    spawnEggs(output);
-                }
-
-                public void sludgeRelatedItems(CreativeModeTab.@NotNull Output output) {
                     output.accept(EEItems.AQUADINE.get());
                     output.accept(EEItems.COOKED_AQUADINE.get());
                     output.accept(EEItems.BUCKET_OF_AQUADINE.get());
@@ -103,6 +93,13 @@ public class EEItems {
                     output.accept(EEItems.BUCKET_OF_DEPHELINGUS.get());
 
                     output.accept(EEItems.BUCKET_OF_SLUDGE.get());
+                    output.accept(EEItems.SULFURIC_DUST.get());
+                }
+
+                public void displayItems(CreativeModeTab.@NotNull Output output) {
+                    items(output);
+                    blocks(output);
+                    spawnEggs(output);
                 }
 
                 @Override
