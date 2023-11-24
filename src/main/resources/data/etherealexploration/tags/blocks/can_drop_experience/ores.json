@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "etherealexploration:bleak_coal_ore"
+    "etherealexploration:bleak_coal_ore",
+    "etherealexploration:bleak_sulfur_ore"
   ]
 }

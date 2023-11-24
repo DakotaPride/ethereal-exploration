@@ -2,11 +2,10 @@ package net.dakotapride.ee.entity;
 
 import net.dakotapride.ee.registry.EEEntities;
 import net.dakotapride.ee.registry.EEParticles;
+import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.entity.EntityDimensions;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.Pose;
+import net.minecraft.util.RandomSource;
+import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
@@ -14,7 +13,10 @@ import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.BlockAndTintGetter;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.pathfinder.BlockPathTypes;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
@@ -23,10 +25,12 @@ import software.bernie.geckolib.core.animatable.GeoAnimatable;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.core.animatable.instance.SingletonAnimatableInstanceCache;
 import software.bernie.geckolib.core.animation.*;
+import software.bernie.geckolib.core.animation.AnimationState;
 import software.bernie.geckolib.core.object.PlayState;
 
 import java.util.EnumSet;
 
+@SuppressWarnings("unused")
 public class FumeEntity extends Monster implements GeoEntity {
     private AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
 
@@ -72,6 +76,10 @@ public class FumeEntity extends Monster implements GeoEntity {
                 .add(Attributes.ATTACK_SPEED, 1.0D)
                 .add(Attributes.MOVEMENT_SPEED, 0.15D)
                 .add(Attributes.FOLLOW_RANGE, 24.0D).build();
+    }
+
+    public static boolean checkSpawnConditions(EntityType<FumeEntity> entity, ServerLevelAccessor level, MobSpawnType type, BlockPos pos, RandomSource random) {
+        return checkMonsterSpawnRules(entity, level, type, pos, random) && (type == MobSpawnType.SPAWNER || level.canSeeSky(pos));
     }
 
     @Override

@@ -6,8 +6,12 @@ import net.dakotapride.ee.entity.*;
 import net.dakotapride.ee.particle.FumesParticle;
 import net.dakotapride.ee.registry.*;
 import net.minecraft.client.Minecraft;
+import net.minecraft.world.entity.FlyingMob;
+import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.SpawnPlacements;
+import net.minecraft.world.entity.animal.FlyingAnimal;
 import net.minecraft.world.entity.animal.WaterAnimal;
+import net.minecraft.world.entity.monster.Husk;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.Potions;
@@ -52,11 +56,13 @@ public class Events {
                         && levelReader.getFluidState(blockPos).getFluidType() == EEFluids.Types.SLUDGE_FLUID_TYPE.get());
 
         SpawnPlacements.register(EEEntities.FUME.get(), SpawnPlacements.Type.ON_GROUND,
-                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Monster::checkAnyLightMonsterSpawnRules);
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Mob::checkMobSpawnRules);
         SpawnPlacements.register(EEEntities.AQUADINE.get(), sludgeSpawnPlacements,
                 Heightmap.Types.OCEAN_FLOOR, AquadineEntity::checkSpawnConditionsForAcidicEntity);
         SpawnPlacements.register(EEEntities.DEPHELINGUS.get(), sludgeSpawnPlacements,
                 Heightmap.Types.OCEAN_FLOOR, DephelingusEntity::checkSpawnConditionsForAcidicEntity);
+        SpawnPlacements.register(EEEntities.DEVIANT.get(), SpawnPlacements.Type.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Mob::checkMobSpawnRules);
     }
 
 }
