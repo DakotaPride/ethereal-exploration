@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:ore",
+  "config": {
+    "size": 23,
+    "discard_chance_on_air_exposure": 0,
+    "targets": [
+      {
+        "target": {
+          "predicate_type": "minecraft:tag_match",
+          "tag": "etherealexploration:bleak_stone_ore_replaceables"
+        },
+        "state": {
+          "Name": "etherealexploration:bleak_coal_ore"
+        }
+      },
+      {
+        "target": {
+          "predicate_type": "minecraft:tag_match",
+          "tag": "etherealexploration:celeste_ore_replaceables"
+        },
+        "state": {
+          "Name": "etherealexploration:celeste_coal_ore"
+        }
+      },
+      {
+        "target": {
+          "predicate_type": "minecraft:tag_match",
+          "tag": "etherealexploration:dendritic_ore_replaceables"
+        },
+        "state": {
+          "Name": "etherealexploration:dendritic_coal_ore"
+        }
+      }
+    ]
+  }
+}

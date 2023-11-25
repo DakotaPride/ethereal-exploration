@@ -48,10 +48,21 @@
   "block.etherealexploration.hardened_sludge": "Block of Hardened Sludge",
   "block.etherealexploration.industrial_iron_block": "Block of Industrial Iron",
   "block.etherealexploration.bleak_stone": "Bleak Stone",
+  "block.etherealexploration.dendritic_stone": "Dendritic Stone",
+  "block.etherealexploration.celeste_stone": "Celeste Stone",
+  "block.etherealexploration.void_stone": "Void Stone",
   "block.etherealexploration.sludge_covered_grass_block": "Sludge Covered Grass Block",
   "block.etherealexploration.dingy_dirt": "Dingy Dirt",
   "block.etherealexploration.bleak_iron_ore": "Bleak Iron Ore",
   "block.etherealexploration.bleak_gold_ore": "Bleak Gold Ore",
   "block.etherealexploration.bleak_coal_ore": "Bleak Coal Ore",
-  "block.etherealexploration.bleak_sulfur_ore": "Bleak Sulfur Ore"
+  "block.etherealexploration.bleak_sulfur_ore": "Bleak Sulfur Ore",
+  "block.etherealexploration.dendritic_iron_ore": "Dendritic Iron Ore",
+  "block.etherealexploration.dendritic_gold_ore": "Dendritic Gold Ore",
+  "block.etherealexploration.dendritic_coal_ore": "Dendritic Coal Ore",
+  "block.etherealexploration.dendritic_sulfur_ore": "Dendritic Sulfur Ore",
+  "block.etherealexploration.celeste_iron_ore": "Celeste Iron Ore",
+  "block.etherealexploration.celeste_gold_ore": "Celeste Gold Ore",
+  "block.etherealexploration.celeste_coal_ore": "Celeste Coal Ore",
+  "block.etherealexploration.celeste_sulfur_ore": "Celeste Sulfur Ore"
 }

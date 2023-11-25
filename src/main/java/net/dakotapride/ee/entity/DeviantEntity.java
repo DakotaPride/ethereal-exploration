@@ -1,30 +1,27 @@
 package net.dakotapride.ee.entity;
 
 import net.dakotapride.ee.entity.goal.DeviantAttackGoal;
-import net.dakotapride.ee.registry.EEEffects;
 import net.minecraft.core.BlockPos;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.control.FlyingMoveControl;
-import net.minecraft.world.entity.ai.goal.*;
+import net.minecraft.world.entity.ai.goal.FloatGoal;
+import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
+import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
+import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.ai.navigation.FlyingPathNavigation;
 import net.minecraft.world.entity.ai.navigation.PathNavigation;
-import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.animal.FlyingAnimal;
-import net.minecraft.world.entity.monster.Husk;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.BlockAndTintGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
@@ -92,6 +89,10 @@ public class DeviantEntity extends Monster implements GeoEntity, FlyingAnimal {
                 .add(Attributes.MOVEMENT_SPEED, 0.20D)
                 .add(Attributes.FLYING_SPEED, 0.15D)
                 .add(Attributes.FOLLOW_RANGE, 16.0D).build();
+    }
+
+    public static boolean spawnConditions(EntityType<DeviantEntity> entity, LevelAccessor level, MobSpawnType type, BlockPos pos, RandomSource source) {
+        return checkMobSpawnRules(entity, level, type, pos, source); // level.canSeeSky(pos) &&
     }
 
     @Override

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "etherealexploration:block/bleak_sulfur_ore"
+    "all": "etherealexploration:block/celeste_sulfur_ore"
   }
 }

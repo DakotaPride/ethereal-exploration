@@ -78,8 +78,8 @@ public class FumeEntity extends Monster implements GeoEntity {
                 .add(Attributes.FOLLOW_RANGE, 24.0D).build();
     }
 
-    public static boolean checkSpawnConditions(EntityType<FumeEntity> entity, ServerLevelAccessor level, MobSpawnType type, BlockPos pos, RandomSource random) {
-        return checkMonsterSpawnRules(entity, level, type, pos, random) && (type == MobSpawnType.SPAWNER || level.canSeeSky(pos));
+    public static boolean spawnConditions(EntityType<FumeEntity> entity, LevelAccessor level, MobSpawnType type, BlockPos pos, RandomSource source) {
+        return checkMobSpawnRules(entity, level, type, pos, source); // level.canSeeSky(pos) &&
     }
 
     @Override

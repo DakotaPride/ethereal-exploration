@@ -56,13 +56,13 @@ public class Events {
                         && levelReader.getFluidState(blockPos).getFluidType() == EEFluids.Types.SLUDGE_FLUID_TYPE.get());
 
         SpawnPlacements.register(EEEntities.FUME.get(), SpawnPlacements.Type.ON_GROUND,
-                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Mob::checkMobSpawnRules);
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, FumeEntity::spawnConditions);
         SpawnPlacements.register(EEEntities.AQUADINE.get(), sludgeSpawnPlacements,
                 Heightmap.Types.OCEAN_FLOOR, AquadineEntity::checkSpawnConditionsForAcidicEntity);
         SpawnPlacements.register(EEEntities.DEPHELINGUS.get(), sludgeSpawnPlacements,
                 Heightmap.Types.OCEAN_FLOOR, DephelingusEntity::checkSpawnConditionsForAcidicEntity);
         SpawnPlacements.register(EEEntities.DEVIANT.get(), SpawnPlacements.Type.ON_GROUND,
-                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Mob::checkMobSpawnRules);
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, DeviantEntity::spawnConditions);
     }
 
 }

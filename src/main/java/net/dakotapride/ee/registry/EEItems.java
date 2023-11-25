@@ -79,6 +79,18 @@ public class EEItems {
                     output.accept(EEBlocks.BLEAK_COAL_ORE.get().asItem());
                     output.accept(EEBlocks.BLEAK_SULFUR_ORE.get().asItem());
 
+                    output.accept(EEBlocks.DENDRITIC_STONE.get().asItem());
+                    output.accept(EEBlocks.DENDRITIC_IRON_ORE.get().asItem());
+                    output.accept(EEBlocks.DENDRITIC_GOLD_ORE.get().asItem());
+                    output.accept(EEBlocks.DENDRITIC_COAL_ORE.get().asItem());
+                    output.accept(EEBlocks.DENDRITIC_SULFUR_ORE.get().asItem());
+
+                    output.accept(EEBlocks.CELESTE_STONE.get().asItem());
+                    output.accept(EEBlocks.CELESTE_IRON_ORE.get().asItem());
+                    output.accept(EEBlocks.CELESTE_GOLD_ORE.get().asItem());
+                    output.accept(EEBlocks.CELESTE_COAL_ORE.get().asItem());
+                    output.accept(EEBlocks.CELESTE_SULFUR_ORE.get().asItem());
+
                     output.accept(EEBlocks.INDUSTRIAL_IRON_BLOCK.get().asItem());
                     output.accept(EEBlocks.HARDENED_SLUDGE_BLOCK.get().asItem());
                 }

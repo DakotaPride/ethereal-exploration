@@ -1,6 +1,5 @@
 package net.dakotapride.ee.entity;
 
-import net.dakotapride.ee.registry.EEBlocks;
 import net.dakotapride.ee.registry.EEFluids;
 import net.dakotapride.ee.registry.EEItems;
 import net.dakotapride.ee.registry.EETags;
@@ -40,8 +39,6 @@ import net.minecraft.world.item.ItemUtils;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.ServerLevelAccessor;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.pathfinder.BlockPathTypes;
@@ -72,6 +69,7 @@ public class AquadineEntity extends WaterAnimal implements GeoEntity, Bucketable
         super(entity, level);
         this.xpReward = 10;
         this.moveControl = new AquadineMoveControl();
+        this.setPathfindingMalus(BlockPathTypes.WATER, 0.0F);
         this.setPathfindingMalus(BlockPathTypes.WATER, 0.0F);
     }
 
@@ -168,15 +166,7 @@ public class AquadineEntity extends WaterAnimal implements GeoEntity, Bucketable
 
     @Override
     protected void handleAirSupply(int prevAir) {
-        if (this.isAlive() && !isInAcidicFluid(this)) {
-            this.setAirSupply(prevAir - 1);
-            if (this.getAirSupply() == -20 && !(this.getType().is(EETags.IMMUNE_TO_DRYING_OUT))) {
-                this.setAirSupply(0);
-                this.hurt(damageSources().dryOut(), 2.0F);
-            }
-        } else {
-            this.setAirSupply(500);
-        }
+        this.setAirSupply(500);
     }
 
     @Override
