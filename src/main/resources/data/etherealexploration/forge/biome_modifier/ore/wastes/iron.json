@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#etherealexploration:is_wastes",
+  "features": "etherealexploration:wastes_iron_ore",
+  "step": "underground_ores"
+}

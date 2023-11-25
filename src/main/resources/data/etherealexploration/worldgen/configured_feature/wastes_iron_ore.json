@@ -2,7 +2,7 @@
   "type": "minecraft:ore",
   "config": {
     "discard_chance_on_air_exposure": 0.0,
-    "size": 16,
+    "size": 12,
     "targets": [
       {
         "target": {
@@ -10,7 +10,7 @@
           "block": "etherealexploration:bleak_stone"
         },
         "state": {
-          "Name": "etherealexploration:bleak_coal_ore"
+          "Name": "etherealexploration:bleak_iron_ore"
         }
       },
       {
@@ -19,7 +19,7 @@
           "block": "etherealexploration:dendritic_stone"
         },
         "state": {
-          "Name": "etherealexploration:dendritic_coal_ore"
+          "Name": "etherealexploration:dendritic_iron_ore"
         }
       },
       {
@@ -28,7 +28,7 @@
           "block": "etherealexploration:celeste_stone"
         },
         "state": {
-          "Name": "etherealexploration:celeste_coal_ore"
+          "Name": "etherealexploration:celeste_iron_ore"
         }
       }
     ]

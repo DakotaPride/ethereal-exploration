@@ -27,19 +27,5 @@
       "minecraft:canyon"
     ]
   },
-  "features": [
-    [],
-    [],
-    [],
-    [],
-    [],
-    [
-      "etherealexploration:wastes_coal_ore"
-    ],
-    [],
-    [],
-    [],
-    [],
-    []
-  ]
+  "features": []
 }
