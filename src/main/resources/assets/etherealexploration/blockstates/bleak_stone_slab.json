@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "etherealexploration:block/bleak_stone_slab"
+    },
+    "type=double": {
+      "model": "etherealexploration:block/bleak_stone"
+    },
+    "type=top": {
+      "model": "etherealexploration:block/bleak_stone_slab_top"
+    }
+  }
+}

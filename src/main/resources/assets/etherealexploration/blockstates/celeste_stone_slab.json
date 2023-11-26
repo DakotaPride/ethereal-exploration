@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "etherealexploration:block/celeste_stone_slab"
+    },
+    "type=double": {
+      "model": "etherealexploration:block/celeste_stone"
+    },
+    "type=top": {
+      "model": "etherealexploration:block/celeste_stone_slab_top"
+    }
+  }
+}

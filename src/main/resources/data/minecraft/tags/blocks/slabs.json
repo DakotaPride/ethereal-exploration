@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "etherealexploration:bleak_stone_slab",
+    "etherealexploration:bleak_stone_brick_slab",
+    "etherealexploration:polished_bleak_stone_slab",
+    "etherealexploration:celeste_stone_slab",
+    "etherealexploration:celeste_stone_brick_slab",
+    "etherealexploration:polished_celeste_stone_slab",
+    "etherealexploration:dendritic_stone_slab",
+    "etherealexploration:dendritic_stone_brick_slab",
+    "etherealexploration:polished_dendritic_stone_slab"
+  ]
+}

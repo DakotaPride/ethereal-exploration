@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "etherealexploration:bleak_stone_stairs",
+    "etherealexploration:bleak_stone_brick_stairs",
+    "etherealexploration:polished_bleak_stone_stairs",
+    "etherealexploration:celeste_stone_stairs",
+    "etherealexploration:celeste_stone_brick_stairs",
+    "etherealexploration:polished_celeste_stone_stairs",
+    "etherealexploration:dendritic_stone_stairs",
+    "etherealexploration:dendritic_stone_brick_stairs",
+    "etherealexploration:polished_dendritic_stone_stairs"
+  ]
+}

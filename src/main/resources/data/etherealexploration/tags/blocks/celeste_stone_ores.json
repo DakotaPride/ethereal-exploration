@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "etherealexploration:celeste_iron_ore",
+    "etherealexploration:celeste_coal_ore",
+    "etherealexploration:celeste_gold_ore",
+    "etherealexploration:celeste_sulfur_ore"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "etherealexploration:block/dendritic_stone_slab"
+    },
+    "type=double": {
+      "model": "etherealexploration:block/dendritic_stone"
+    },
+    "type=top": {
+      "model": "etherealexploration:block/dendritic_stone_slab_top"
+    }
+  }
+}

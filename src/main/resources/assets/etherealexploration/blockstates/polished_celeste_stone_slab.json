@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "etherealexploration:block/polished_celeste_stone_slab"
+    },
+    "type=double": {
+      "model": "etherealexploration:block/polished_celeste_stone"
+    },
+    "type=top": {
+      "model": "etherealexploration:block/polished_celeste_stone_top"
+    }
+  }
+}

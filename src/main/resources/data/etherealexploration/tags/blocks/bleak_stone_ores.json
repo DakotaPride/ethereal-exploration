@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "etherealexploration:bleak_iron_ore",
+    "etherealexploration:bleak_coal_ore",
+    "etherealexploration:bleak_gold_ore",
+    "etherealexploration:bleak_sulfur_ore"
+  ]
+}

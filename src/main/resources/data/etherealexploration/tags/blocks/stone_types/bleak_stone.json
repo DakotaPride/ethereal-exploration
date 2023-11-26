@@ -1,0 +1,18 @@
+{
+  "replace": false,
+  "values": [
+    "#etherealexploration:bleak_stone_ores",
+    "etherealexploration:bleak_stone",
+    "etherealexploration:bleak_stone_stairs",
+    "etherealexploration:bleak_stone_slab",
+    "etherealexploration:bleak_stone_wall",
+    "etherealexploration:bleak_stone_bricks",
+    "etherealexploration:bleak_stone_brick_stairs",
+    "etherealexploration:bleak_stone_brick_slab",
+    "etherealexploration:bleak_stone_brick_wall",
+    "etherealexploration:polished_bleak_stone",
+    "etherealexploration:polished_bleak_stone_stairs",
+    "etherealexploration:polished_bleak_stone_slab",
+    "etherealexploration:polished_bleak_stone_wall"
+  ]
+}

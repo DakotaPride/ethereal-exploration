@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "etherealexploration:block/celeste_stone_bricks",
+    "side": "etherealexploration:block/celeste_stone_bricks",
+    "top": "etherealexploration:block/celeste_stone_bricks"
+  }
+}

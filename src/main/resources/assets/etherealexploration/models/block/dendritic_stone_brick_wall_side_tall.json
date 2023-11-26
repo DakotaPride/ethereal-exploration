@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_wall_post_side_tall",
+  "textures": {
+    "wall": "etherealexploration:block/dendritic_stone_bricks"
+  }
+}

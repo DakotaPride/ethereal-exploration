@@ -1,9 +1,12 @@
 {
   "replace": false,
   "values": [
-    "etherealexploration:industrial_iron_block",
-    "etherealexploration:bleak_stone",
-    "etherealexploration:bleak_iron_ore",
-    "etherealexploration:bleak_gold_ore"
+    "#etherealexploration:bleak_stone_ores",
+    "#etherealexploration:celeste_stone_ores",
+    "#etherealexploration:dendritic_stone_ores",
+    "#etherealexploration:stone_types/bleak_stone",
+    "#etherealexploration:stone_types/celeste_stone",
+    "#etherealexploration:stone_types/dendritic_stone",
+    "etherealexploration:industrial_iron_block"
   ]
 }

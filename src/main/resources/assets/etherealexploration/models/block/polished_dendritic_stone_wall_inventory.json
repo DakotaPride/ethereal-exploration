@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/wall_inventory",
+  "textures": {
+    "wall": "etherealexploration:block/polished_dendritic_stone"
+  }
+}
