@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/inner_stairs",
-  "textures": {
-    "bottom": "etherealexploration:block/bleak_stone",
-    "side": "etherealexploration:block/bleak_stone",
-    "top": "etherealexploration:block/bleak_stone"
-  }
-}

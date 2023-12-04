@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    "etherealexploration:dendritic_iron_ore",
-    "etherealexploration:dendritic_coal_ore",
-    "etherealexploration:dendritic_gold_ore",
-    "etherealexploration:dendritic_sulfur_ore"
-  ]
-}

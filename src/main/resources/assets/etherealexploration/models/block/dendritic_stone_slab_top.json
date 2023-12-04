@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab_top",
-  "textures": {
-    "bottom": "etherealexploration:block/dendritic_stone",
-    "side": "etherealexploration:block/dendritic_stone",
-    "top": "etherealexploration:block/dendritic_stone"
-  }
-}
