@@ -1,6 +1,7 @@
 package net.dakotapride.ee.registry;
 
 import net.dakotapride.ee.EtherealExploration;
+import net.dakotapride.ee.item.EyeOfOChasmItem;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
@@ -15,6 +16,8 @@ import org.jetbrains.annotations.NotNull;
 @SuppressWarnings("unused")
 public class EEItems {
     public static DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, EtherealExploration.MOD_ID);
+
+    public static RegistryObject<Item> EYE_OF_O_CHASM = ITEMS.register("eye_of_o_chasm", () -> new EyeOfOChasmItem(new Item.Properties().stacksTo(1).fireResistant()));
 
     // public static RegistryObject<Item> TOXIN_PROTECTION_HELMET = ITEMS.register("toxin_helmet", () -> new Item(new Item.Properties().stacksTo(1).fireResistant()));
     public static RegistryObject<Item> AQUADINE = ITEMS.register("aquadine", () -> new Item(new Item.Properties().food(EEFoods.RAW_AQUADINE.properties)));

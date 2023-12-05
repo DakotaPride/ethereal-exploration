@@ -1,4 +1,15 @@
 {
+  "block.etherealexploration.abnormal_table": "Abnormal Table",
+  "item.etherealexploration.eye_of_o_chasm": "Eye of O' Chasm",
+  "block.etherealexploration.void_stone": "Void Stone",
+
+  "effect.etherealexploration.avoidance": "Avoidance",
+  "item.minecraft.potion.effect.avoidance": "Potion of Avoidance",
+  "item.minecraft.splash_potion.effect.avoidance": "Splash Potion of Avoidance",
+  "item.minecraft.lingering_potion.effect.avoidance": "Lingering Potion of Avoidance",
+  "item.minecraft.tipped_arrow.effect.avoidance": "Arrow of Avoidance",
+
+  // Wastes Related
   "entity.etherealexploration.outburst": "Outburst",
   "entity.etherealexploration.fume": "Fume",
   "entity.etherealexploration.aquadine": "Aquadine",
@@ -7,11 +18,6 @@
   "entity.etherealexploration.fume_gas": "Clump of Toxic Gas",
 
   "effect.etherealexploration.pestilent": "Pestilent",
-  "effect.etherealexploration.avoidance": "Avoidance",
-  "item.minecraft.potion.effect.avoidance": "Potion of Avoidance",
-  "item.minecraft.splash_potion.effect.avoidance": "Splash Potion of Avoidance",
-  "item.minecraft.lingering_potion.effect.avoidance": "Lingering Potion of Avoidance",
-  "item.minecraft.tipped_arrow.effect.avoidance": "Arrow of Avoidance",
   "effect.etherealexploration.toxic_vision": "Toxic Vision",
   "item.minecraft.potion.effect.toxic_vision": "Potion of Toxic Vision",
   "item.minecraft.splash_potion.effect.toxic_vision": "Splash Potion of Toxic Vision",
@@ -83,7 +89,6 @@
   "block.etherealexploration.celeste_stone_brick_stairs": "Celeste Stone Brick Stairs",
   "block.etherealexploration.celeste_stone_brick_slab": "Celeste Stone Brick Slab",
   "block.etherealexploration.celeste_stone_brick_wall": "Celeste Stone Brick Wall",
-  "block.etherealexploration.void_stone": "Void Stone",
   "block.etherealexploration.sludge_covered_grass_block": "Sludge Covered Grass Block",
   "block.etherealexploration.dingy_dirt": "Dingy Dirt",
   "block.etherealexploration.bleak_iron_ore": "Bleak Iron Ore",

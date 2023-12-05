@@ -1,10 +1,7 @@
 package net.dakotapride.ee.registry;
 
 import net.dakotapride.ee.EtherealExploration;
-import net.dakotapride.ee.block.StairsBlock;
-import net.dakotapride.ee.block.WastesOreBlock;
-import net.dakotapride.ee.block.SludgeBlock;
-import net.dakotapride.ee.block.SludgeCoveredGrassBlock;
+import net.dakotapride.ee.block.*;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
@@ -20,6 +17,8 @@ import java.util.function.Supplier;
 @SuppressWarnings("unused")
 public class EEBlocks {
     public static DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, EtherealExploration.MOD_ID);
+
+    public static RegistryObject<Block> ABNORMAL_TABLE = block("abnormal_table", () -> new AbnormalTableBlock(BlockBehaviour.Properties.copy(Blocks.CARTOGRAPHY_TABLE)));
 
     public static RegistryObject<Block> BLEAK_STONE = block("bleak_stone", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).requiresCorrectToolForDrops()));
     public static RegistryObject<Block> BLEAK_STONE_SLAB = block("bleak_stone_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.STONE_SLAB).requiresCorrectToolForDrops()));

@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "etherealexploration:block/abnormal_table_bottom",
+    "east": "etherealexploration:block/abnormal_table_side",
+    "north": "etherealexploration:block/abnormal_table_side",
+    "particle": "etherealexploration:block/abnormal_table_side",
+    "south": "etherealexploration:block/abnormal_table_side",
+    "up": "etherealexploration:block/abnormal_table_top",
+    "west": "etherealexploration:block/abnormal_table_side"
+  }
+}
