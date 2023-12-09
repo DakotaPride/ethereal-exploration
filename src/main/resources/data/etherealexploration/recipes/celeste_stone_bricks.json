@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "celeste_stone_craftables",
+  "pattern": [
+    "SS",
+    "SS"
+  ],
+  "key": {
+    "S": {
+      "item": "etherealexploration:polished_celeste_stone"
+    }
+  },
+  "result": {
+    "item": "etherealexploration:celeste_stone_bricks",
+    "count": 4
+  }
+}

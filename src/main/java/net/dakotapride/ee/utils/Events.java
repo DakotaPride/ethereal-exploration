@@ -32,7 +32,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 public class Events {
     @SubscribeEvent
     public static void commonSetupEvent(FMLCommonSetupEvent event) {
-        BrewingRecipeRegistry.addRecipe(new BrewingRecipe(Potions.AWKWARD, EEItems.AQUADINE.get(), EEEffects.Potions.TOXIC_VISION.get()));
+        BrewingRecipeRegistry.addRecipe(new BrewingRecipe(Potions.NIGHT_VISION, EEItems.AQUADINE.get(), EEEffects.Potions.TOXIC_VISION.get()));
         BrewingRecipeRegistry.addRecipe(new BrewingRecipe(EEEffects.Potions.TOXIC_VISION.get(), Items.REDSTONE, EEEffects.Potions.LONG_TOXIC_VISION.get()));
         BrewingRecipeRegistry.addRecipe(new BrewingRecipe(Potions.MUNDANE, EEItems.SULFURIC_DUST.get(), EEEffects.Potions.AVOIDANCE.get()));
     }

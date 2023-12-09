@@ -31,6 +31,7 @@ public class EEItems {
     public static RegistryObject<Item> BUCKET_OF_SLUDGE = ITEMS.register("sludge_bucket", () -> new BucketItem(EEFluids.SOURCE_SLUDGE, new Item.Properties()
             .craftRemainder(Items.BUCKET).stacksTo(1)));
     public static RegistryObject<Item> SULFURIC_DUST = ITEMS.register("sulfur_dust", () -> new Item(new Item.Properties().fireResistant()));
+    public static RegistryObject<Item> INDUSTRIAL_IRON_INGOT = ITEMS.register("industrial_iron_ingot", () -> new Item(new Item.Properties()));
 
     public static RegistryObject<Item> AQUADINE_SPAWN_EGG = ITEMS.register("aquadine_spawn_egg",
             () -> new ForgeSpawnEggItem(() -> EEEntities.AQUADINE.get(), 0x2D601A, 0xDCFF84, new Item.Properties()));
@@ -55,12 +56,39 @@ public class EEItems {
                         .title(Component.translatable("etherealexploration.tab.wastes"))
                         .displayItems(new Module.Wastes())
                         .build());
+        public static final RegistryObject<CreativeModeTab> UNIVERSAL = CREATIVE_MODE_TABS.register("universal",
+                () -> CreativeModeTab.builder().icon(() -> new ItemStack(EEItems.EYE_OF_O_CHASM.get()))
+                        .title(Component.translatable("etherealexploration.tab.universal"))
+                        .displayItems(new Module.Basic())
+                        .build());
 
         public static void init(IEventBus bus) {
             CREATIVE_MODE_TABS.register(bus);
         }
 
         public static class Module {
+
+            public static class Basic extends Module implements CreativeModeTab.DisplayItemsGenerator {
+
+                public void items(CreativeModeTab.@NotNull Output output) {
+                    output.accept(EEItems.EYE_OF_O_CHASM.get());
+                }
+
+                public void blocks(CreativeModeTab.@NotNull Output output) {
+                    output.accept(EEBlocks.ABNORMAL_TABLE.get().asItem());
+                }
+
+                public void displayItems(CreativeModeTab.@NotNull Output output) {
+                    items(output);
+                    blocks(output);
+                }
+
+                @Override
+                public void accept(CreativeModeTab.@NotNull ItemDisplayParameters parameters, CreativeModeTab.@NotNull Output output) {
+                    displayItems(output);
+                }
+
+            }
 
             public static class Wastes extends Module implements CreativeModeTab.DisplayItemsGenerator {
 

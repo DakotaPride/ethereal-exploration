@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "bleak_stone_craftables",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "etherealexploration:polished_bleak_stone"
+    }
+  },
+  "result": {
+    "item": "etherealexploration:polished_bleak_stone_stairs",
+    "count": 4
+  }
+}

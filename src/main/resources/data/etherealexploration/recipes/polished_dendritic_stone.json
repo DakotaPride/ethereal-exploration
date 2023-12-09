@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "dendritic_stone_craftables",
+  "pattern": [
+    "SS",
+    "SS"
+  ],
+  "key": {
+    "S": {
+      "item": "etherealexploration:dendritic_stone"
+    }
+  },
+  "result": {
+    "item": "etherealexploration:polished_dendritic_stone",
+    "count": 4
+  }
+}

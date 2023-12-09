@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "celeste_stone_craftables",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "etherealexploration:celeste_stone"
+    }
+  },
+  "result": {
+    "item": "etherealexploration:celeste_stone_stairs",
+    "count": 4
+  }
+}

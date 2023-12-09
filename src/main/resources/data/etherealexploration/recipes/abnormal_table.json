@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "XAX",
+    "ZZZ"
+  ],
+  "key": {
+    "X": {
+      "item": "minecraft:end_rod"
+    },
+    "A": {
+      "item": "minecraft:fletching_table"
+    },
+    "Z": [
+      {
+        "item": "minecraft:obsidian"
+      },
+      {
+        "tag": "etherealexploration:stone_types/void_stone"
+      }
+    ],
+    "#": {
+      "item": "minecraft:popped_chorus_fruit"
+    }
+  },
+  "result": {
+    "item": "etherealexploration:abnormal_table",
+    "count": 1
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "etherealexploration:dephelingus"
+  },
+  "result": "etherealexploration:cooked_dephelingus",
+  "experience": 0.35,
+  "cookingtime": 200
+}

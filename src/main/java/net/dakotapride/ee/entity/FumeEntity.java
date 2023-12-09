@@ -17,6 +17,7 @@ import net.minecraft.world.level.BlockAndTintGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.ServerLevelAccessor;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.pathfinder.BlockPathTypes;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
@@ -76,6 +77,9 @@ public class FumeEntity extends Monster implements GeoEntity {
                 .add(Attributes.ATTACK_SPEED, 1.0D)
                 .add(Attributes.MOVEMENT_SPEED, 0.15D)
                 .add(Attributes.FOLLOW_RANGE, 24.0D).build();
+    }
+
+    protected void checkFallDamage(double k, boolean l, @NotNull BlockState state, @NotNull BlockPos pos) {
     }
 
     public static boolean spawnConditions(EntityType<FumeEntity> entity, LevelAccessor level, MobSpawnType type, BlockPos pos, RandomSource source) {

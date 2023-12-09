@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smoking",
+  "ingredient": {
+    "item": "etherealexploration:aquadine"
+  },
+  "result": "etherealexploration:cooked_aquadine",
+  "experience": 0.35,
+  "cookingtime": 100
+}

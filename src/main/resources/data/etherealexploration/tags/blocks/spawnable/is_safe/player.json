@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "#etherealexploration:stone_types/bleak_stone",
+    "#etherealexploration:stone_types/dendritic_stone",
+    "#etherealexploration:stone_types/celeste_stone",
+    "#etherealexploration:stone_types/void_stone"
+  ]
+}

@@ -9,6 +9,8 @@
   "item.minecraft.lingering_potion.effect.avoidance": "Lingering Potion of Avoidance",
   "item.minecraft.tipped_arrow.effect.avoidance": "Arrow of Avoidance",
 
+  "etherealexploration.tab.universal": "Ethereal Exploration - Universal",
+
   // Wastes Related
   "entity.etherealexploration.outburst": "Outburst",
   "entity.etherealexploration.fume": "Fume",
@@ -45,6 +47,7 @@
   "item.etherealexploration.dephelingus_spawn_egg": "Dephelingus Spawn Egg",
   "item.etherealexploration.sludge_bucket": "Bucket of Sludge",
   "item.etherealexploration.sulfur_dust": "Sulfuric Dust",
+  "item.etherealexploration.industrial_iron_ingot": "Industrial Iron Ingot",
   "item.etherealexploration.fume_spawn_egg": "Fume Spawn Egg",
   "item.etherealexploration.deviant_spawn_egg": "Deviant Spawn Egg",
   "item.etherealexploration.outburst_spawn_egg": "Outburst Spawn Egg",

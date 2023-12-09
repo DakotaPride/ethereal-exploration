@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "industrial_iron_ingot",
+  "ingredients": [
+    {
+      "item": "etherealexploration:industrial_iron_block"
+    }
+  ],
+  "result": {
+    "item": "etherealexploration:industrial_iron_ingot",
+    "count": 9
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " X ",
+    "X#X",
+    " X "
+  ],
+  "key": {
+    "X": [
+      {
+        "item": "minecraft:obsidian"
+      },
+      {
+        "tag": "etherealexploration:stone_types/void_stone"
+      }
+    ],
+    "#": {
+      "item": "minecraft:ender_eye"
+    }
+  },
+  "result": {
+    "item": "etherealexploration:eye_of_o_chasm",
+    "count": 1
+  }
+}
